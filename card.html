@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="card.css">
+    <title>Card</title>
+</head>
+
+<body>
+
+    <main class="h-screen bg-green-500">Page1</main>
+    <section class="px-12">
+        <div class="container mx-auto flex flex-col lg:flex-row  justify-between h-full py-[200px]">
+            <div class="text-[30px] text-black h-[300px] sticky top-[4vh] lg:top-[20vh] text-center">
+                Cards Vertical Sticky Scroll
+            </div>
+            <div class="flex flex-col justify-center items-center gap-12 sticky">
+                <div class="bg-red-200 w-[300px] rounded-3xl flex items-center justify-center md:w-[700px] h-[500px] top-[20vh] sticky">div 1</div>
+                <div class="bg-green-200 w-[300px] rounded-3xl flex items-center justify-center md:w-[700px] h-[500px] top-[20vh] sticky">div 1</div>
+                <div class="bg-yellow-200 w-[300px] rounded-3xl flex items-center justify-center md:w-[700px] h-[500px] top-[20vh] sticky">div 1</div>
+                <div class="bg-purple-200 w-[300px] rounded-3xl flex items-center justify-center md:w-[700px] h-[500px] top-[20vh] sticky">div 1</div>
+            </div>
+        </div>
+    </section>
+    <main class="h-screen bg-green-500">Page1</main>
+</body>
+
+</html>
