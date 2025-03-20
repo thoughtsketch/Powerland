@@ -110,3 +110,110 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("popupOverlay").style.display = "flex";
     };
   });
+
+
+
+  let formSubmitted = false;
+
+    // Function to close the popup form
+    function closeForm() {
+      document.getElementById("popupOverlay").style.display = "none";
+    }
+
+    // Function to show the popup form
+    function showPopupForm(event) {
+      event.preventDefault();
+      document.getElementById("popupOverlay").style.display = "flex";
+    }
+
+    // Attach event listeners to all download buttons
+    document
+      .querySelectorAll(".download-btn, .button2-download, .down-btn, .btn, a[href='#'], a[href='contact'], a[href='price'] ")
+      .forEach((button) => {
+        button.addEventListener("click", showPopupForm);
+      });
+
+    // Show the form on page load (optional)
+    window.onload = function () {
+      document.getElementById("popupOverlay").style.display = "flex"; // Automatically show form on page load
+    };
+
+    // Function to handle form submission
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        if (formSubmitted) {
+          alert("Form already submitted!");
+          return;
+        }
+
+        // Get form values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mobile = document.getElementById("mobile").value.trim();
+        const termsChecked = document.getElementById("termsCheckbox").checked;
+
+        // Validate required fields
+        if (!name || !email || !mobile || !termsChecked) {
+          alert("All fields are required, and you must accept the terms.");
+          return;
+        }
+
+        // Validate phone number (must be exactly 10 digits)
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(mobile)) {
+          alert("Please enter a valid 10-digit phone number.");
+          return;
+        }
+
+        // Additional fixed fields
+        const project = "iLife Business Zone"; // Fixed project name
+        const source = "Website"; // Fixed source value
+
+        // Payload to send
+        const payload = { name, email, mobile, project, source };
+
+  try {
+    // Step 1: Always send data to email via PHP backend, even if API fails
+    const emailHandlerUrl = "/emailHandler.php"; // Update with correct PHP script path
+    const emailResponse = await fetch(emailHandlerUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(payload), // Convert JSON to URL-encoded string
+    });
+
+    if (!emailResponse.ok) {
+      const emailError = await emailResponse.json();
+      throw new Error(emailError.message || "Failed to send email");
+    }
+    const emailResult = await emailResponse.json();
+    console.log("Email sent successfully:", emailResult.message);
+  } catch (error) {
+    console.error("Email Error:", error.message);
+  }
+
+
+  try {
+    // Step 2: Try sending data to API
+    const apiUrl = "https://maestro-realtek.turbo.8ease.co/public/companies/1dc9b9ef-c91a-4f4e-8cde-3020ed6747d2/leads-all"; // Demo API URL
+    const apiResponse = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!apiResponse.ok) {
+      throw new Error("Failed to submit data to API");
+    }
+    const apiResult = await apiResponse.json();
+    console.log("Data sent to API successfully:", apiResult);
+  } catch (error) {
+    console.error("API Error:", error.message);
+  }
+
+  // Step 3: Redirect to thank-you page regardless of errors
+  formSubmitted = true; // Mark the form as submitted
+  window.location.href = "thank-you.html"; // Redirect to thank-you page
+      });

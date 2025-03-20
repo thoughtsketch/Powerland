@@ -3,32 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Navbar</title>
+    <title>Bhodev-Ghat</title>
     <link rel="stylesheet" href="./index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100">
-    
+    <div id="popupOverlay">
+      <div id="popupForm">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        <div class="form-logo">
+          <img src="./image/BOPDEV GHAT Route V6-17.png" alt="Logo" />
+        </div>
+        <h2>I AM INTERESTED</h2>
+        <form id="contactForm" action="emailHandler.php" method="POST">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input type="tel" id="mobile" placeholder="Your Phone" required />
+          <label>
+            <input type="checkbox" id="termsCheckbox" required />
+            I authorize Codename PowerLand and its representatives to Call,
+            SMS, Email, or WhatsApp me about its products and offers. This
+            consent overrides any registration for DNC / NDNC.
+          </label>
+          <button type="submit" id="submitButton">Submit</button>
+        </form>
+      </div>
+    </div>
     <nav
-      class="bg-white py-4 px-6 flex items-center justify-between flex-wrap md:flex-nowrap relative"
+      class="bg-white py-1 px-8 flex items-center justify-between flex-wrap md:flex-nowrap relative"
     >
       <!-- Left Logo -->
       <div class="flex-shrink-0">
-        <img src="logo1.png" alt="Logo1" class="h-14" />
+        <img src="./image/BOPDEV GHAT Route V6-17.png" alt="Logo1" class="h-16  w-55" />
       </div>
 
       <!-- Navigation Container (Desktop) -->
       <div
-        class="hidden md:flex bg-gray-100 px-6 py-3 rounded-full items-center space-x-4 md:space-x-8"
+        class="hidden md:flex bg-gray-100 px-4 py-3 rounded-full items-center space-x-4 md:space-x-8"
       >
         <ul
           class="flex space-x-4 md:space-x-6 text-gray-900 text-base font-normal"
         >
-          <li><a href="#" class="bg-white px-4 py-2 rounded-full">Home</a></li>
-          <li><a href="#" class="hover:underline">About Us</a></li>
-          <li><a href="#" class="hover:underline">Gallery</a></li>
-          <li><a href="#" class="hover:underline">Location</a></li>
-          <li><a href="#" class="hover:underline">Contact Us</a></li>
+          <li><a href="#" class="bg-white px-6 py-2 rounded-full">Home</a></li>
+          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">About Us</a></li>
+          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">Gallery</a></li>
+          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">Location</a></li>
+          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">Contact Us</a></li>
         </ul>
 
         <!-- Contact Number -->
@@ -37,7 +57,7 @@
 
       <!-- Right Logo (Hidden on Tablet/Mobile) -->
       <div class="hidden md:block flex-shrink-0">
-        <img src="logo2.png" alt="Logo2" class="h-14" />
+        <img src="logo2.png" alt="" class="h-14" />
       </div>
 
       <!-- Hamburger Menu (Visible on Tablet/Mobile) -->
@@ -117,72 +137,52 @@
       </div>
     </div>
     <main>
-        <section class="py-2 relative bg-white">
-            <div class="relative">
-                <div
-                    class="hs-carousel relative overflow-hidden w-full h-[30rem] md:h-[calc(100vh-106px)] shadow-lg"
-                >
-                    <div
-                        class="hs-carousel-body flex transition-transform duration-700 ease-in-out"
-                        id="carouselBody"
-                    >
-                        <!-- Slide 1 -->
-                        <div class="hs-carousel-slide flex-shrink-0 w-full">
-                            <div
-                                class="relative h-[30rem] md:h-[calc(100vh-106px)] flex items-center justify-center bg-[url('./images/hero1.webp')] bg-cover bg-center bg-no-repeat"
-                            >
-                                <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
-                                <div class="relative z-10 text-center text-white max-w-2xl px-6">
-                                    <span class="block text-sm uppercase tracking-wider text-white">
-                                        Bopdev Ghat
-                                    </span>
-                                    <h2 class="mt-2 text-2xl md:text-4xl font-semibold leading-tight text-white">
-                                        Bopdev Ghat Project NA Premium Villa Plots
-                                    </h2>
-                                    <div class="mt-5">
-                                        <a class="py-3 px-5 inline-flex items-center gap-x-2 text-sm font-medium rounded-full bg-[#C5964A] text-white hover:bg-[#C5964A] transition"
-                                            href="#">
-                                            Schedule a Visit
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- Slide 2 -->
-                        <div class="hs-carousel-slide flex-shrink-0 w-full">
-                            <div
-                                class="relative h-[30rem] md:h-[calc(100vh-106px)] flex items-center justify-center bg-[url('./images/hero2.webp')] bg-cover bg-top bg-no-repeat"
-                            >
-                                <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
-                                <div class="relative z-10 text-center text-white max-w-2xl px-6">
-                                    <span class="block text-sm uppercase tracking-wider text-white">
-                                        Bopdev Ghat
-                                    </span>
-                                    <h2 class="mt-2 text-2xl md:text-4xl font-semibold leading-tight text-white">
-                                        Experience the Allure of Bopdev Ghat
-                                    </h2>
-                                    <div class="mt-5">
-                                        <a class="py-3 px-5 inline-flex items-center gap-x-2 text-sm font-medium rounded-full bg-[#C5964A] text-white hover:bg-gray-100 transition"
-                                            href="#">
-                                            Schedule a Visit
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <section class="px-0 sm:px-0 lg:px-0 py-0 relative bg-white">
+        <div class="relative">
+          <div class="hs-carousel relative overflow-hidden w-full min-h-[50vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[calc(100vh-106px)]  shadow-lg">
+            <div class="hs-carousel-body flex transition-transform duration-700 ease-in-out h-full" id="carouselBody">
+              <!-- Slide 1 -->
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
+                <div class="relative w-full h-full">
+                  <img src="./image/hero1.jpg" class="w-full h-full object-cover" alt="Slide 1">
                 </div>
-        
-                <!-- Indicator Dots -->
-                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                    <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
-                        data-slide="0"></button>
-                    <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
-                        data-slide="1"></button>
+              </div>
+      
+              <!-- Slide 2 -->
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
+                <div class="relative w-full h-full">
+                  <img src="./image/hero2.jpg" class="w-full h-full object-cover " alt="Slide 2">
                 </div>
+              </div>
+
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
+                <div class="relative w-full h-full">
+                  <img src="./image/hero3.jpg" class="w-full h-full object-cover " alt="Slide 2">
+                </div>
+              </div>
+
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
+                <div class="relative w-full h-full">
+                  <img src="./image/hero4.jpg" class="w-full h-full object-cover " alt="Slide 2">
+                </div>
+              </div>
+
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
+                <div class="relative w-full h-full">
+                  <img src="./image/hero5.jpg" class="w-full h-full object-cover " alt="Slide 2">
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+      
+          <!-- Indicator Dots -->
+          <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition" data-slide="0"></button>
+            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition" data-slide="1"></button>
+          </div>
+        </div>
+      </section>
+      
         
 
       <!-- about -->
@@ -503,10 +503,11 @@ enthusiasts, trekkers, and cyclists.
             <!-- Heading and Description -->
             <div class="bg-blue-100 p-6 md:p-10 rounded-lg text-center">
               <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
-                Lorem Ipsum Dolor Sit Amet
+                Strengths and Opportunities
               </h2>
               <p class="text-gray-700 text-base md:text-lg mt-3 md:mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Nestled amidst the Sahyadri hills with lush greenery and panoramic
+views, offering a peaceful and picturesque setting.
               </p>
             </div>
 
@@ -519,7 +520,7 @@ enthusiasts, trekkers, and cyclists.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                  Lorem ipsum dolor sit amet
+                Healthy Environment
                 </p>
               </div>
               <div
@@ -529,7 +530,7 @@ enthusiasts, trekkers, and cyclists.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                  Consectetur adipiscing elit
+                Reputed Developer
                 </p>
               </div>
             </div>
@@ -548,10 +549,11 @@ enthusiasts, trekkers, and cyclists.
             <!-- Heading and Description -->
             <div class="bg-blue-100 p-6 md:p-10 rounded-lg text-center">
               <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
-                Lorem Ipsum Dolor Sit Amet
+                Emerging Real Estate Hotspot
               </h2>
               <p class="text-gray-700 text-base md:text-lg mt-3 md:mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Rapid development in the area boosts the value and
+                appeal of property investments.
               </p>
             </div>
 
@@ -564,7 +566,7 @@ enthusiasts, trekkers, and cyclists.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                  Lorem ipsum dolor sit amet
+                Potential for High ROI
                 </p>
               </div>
               <div
@@ -574,7 +576,7 @@ enthusiasts, trekkers, and cyclists.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                  Consectetur adipiscing elit
+                Tourism and Recreation
                 </p>
               </div>
             </div>
@@ -697,14 +699,14 @@ enthusiasts, trekkers, and cyclists.
           <div class="footer-item">
             <h3 class="footer-title">Strategic Partner</h3>
             <img
-              src="./images/maestro logo white.webp"
+              src="./image/maestro logo white.webp"
               alt="Partner Logo"
               class="footer-logo"
             />
           </div>
           <div class="footer-item">
             <img
-              src="./assets/image/ibz.png"
+              src="./image/logo-white.png"
               alt="Project Logo"
               class="footer-logo"
             />
@@ -716,7 +718,7 @@ enthusiasts, trekkers, and cyclists.
           <div class="footer-item">
             <h3 class="footer-title">Scan QR Code</h3>
             <img
-              src="./assets/image/qr.jpg"
+              src="image/qr.jpg"
               alt="QR Code"
               class="footer-qr-code"
             />
@@ -725,7 +727,7 @@ enthusiasts, trekkers, and cyclists.
             <a href="https://maharera.mahaonline.gov.in" class="footer-link"
               >https://maharera.mahaonline.gov.in</a
             >
-            <p class="footer-text">P52100078861</p>
+            <p class="footer-text">P52100032072</p>
           </div>
         </div>
 
