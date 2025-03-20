@@ -1,12 +1,783 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    
+    <nav
+      class="bg-white py-4 px-6 flex items-center justify-between flex-wrap md:flex-nowrap relative"
+    >
+      <!-- Left Logo -->
+      <div class="flex-shrink-0">
+        <img src="logo1.png" alt="Logo1" class="h-14" />
+      </div>
+
+      <!-- Navigation Container (Desktop) -->
+      <div
+        class="hidden md:flex bg-gray-100 px-6 py-3 rounded-full items-center space-x-4 md:space-x-8"
+      >
+        <ul
+          class="flex space-x-4 md:space-x-6 text-gray-900 text-base font-normal"
+        >
+          <li><a href="#" class="bg-white px-4 py-2 rounded-full">Home</a></li>
+          <li><a href="#" class="hover:underline">About Us</a></li>
+          <li><a href="#" class="hover:underline">Gallery</a></li>
+          <li><a href="#" class="hover:underline">Location</a></li>
+          <li><a href="#" class="hover:underline">Contact Us</a></li>
+        </ul>
+
+        <!-- Contact Number -->
+        <div class="text-gray-900 text-base font-normal">+91 9742069669</div>
+      </div>
+
+      <!-- Right Logo (Hidden on Tablet/Mobile) -->
+      <div class="hidden md:block flex-shrink-0">
+        <img src="logo2.png" alt="Logo2" class="h-14" />
+      </div>
+
+      <!-- Hamburger Menu (Visible on Tablet/Mobile) -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg
+          class="w-8 h-8 text-gray-900"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Sidebar (Hidden by Default) -->
+    <div
+      id="sidebar"
+      class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out"
+    >
+      <div class="flex items-center justify-between p-4 border-b">
+        <img src="logo1.png" alt="Logo1" class="h-14" />
+        <button id="close-btn" class="text-gray-900 focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sidebar Links -->
+      <ul class="p-6 space-y-4 text-gray-900 text-base font-normal">
+        <li>
+          <a href="#" class="block py-2 px-4 bg-gray-100 rounded-md">Home</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-100 rounded-md"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-100 rounded-md"
+            >Gallery</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-100 rounded-md"
+            >Location</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-4 hover:bg-gray-100 rounded-md"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+
+      <!-- Contact Number -->
+      <div class="p-6 text-gray-900 text-base font-normal">
+        <p>+91 9742069669</p>
+      </div>
+    </div>
+    <main>
+        <section class="py-2 relative bg-white">
+            <div class="relative">
+                <div
+                    class="hs-carousel relative overflow-hidden w-full h-[30rem] md:h-[calc(100vh-106px)] shadow-lg"
+                >
+                    <div
+                        class="hs-carousel-body flex transition-transform duration-700 ease-in-out"
+                        id="carouselBody"
+                    >
+                        <!-- Slide 1 -->
+                        <div class="hs-carousel-slide flex-shrink-0 w-full">
+                            <div
+                                class="relative h-[30rem] md:h-[calc(100vh-106px)] flex items-center justify-center bg-[url('./images/hero1.webp')] bg-cover bg-center bg-no-repeat"
+                            >
+                                <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
+                                <div class="relative z-10 text-center text-white max-w-2xl px-6">
+                                    <span class="block text-sm uppercase tracking-wider text-white">
+                                        Bopdev Ghat
+                                    </span>
+                                    <h2 class="mt-2 text-2xl md:text-4xl font-semibold leading-tight text-white">
+                                        Bopdev Ghat Project NA Premium Villa Plots
+                                    </h2>
+                                    <div class="mt-5">
+                                        <a class="py-3 px-5 inline-flex items-center gap-x-2 text-sm font-medium rounded-full bg-[#C5964A] text-white hover:bg-[#C5964A] transition"
+                                            href="#">
+                                            Schedule a Visit
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Slide 2 -->
+                        <div class="hs-carousel-slide flex-shrink-0 w-full">
+                            <div
+                                class="relative h-[30rem] md:h-[calc(100vh-106px)] flex items-center justify-center bg-[url('./images/hero2.webp')] bg-cover bg-top bg-no-repeat"
+                            >
+                                <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
+                                <div class="relative z-10 text-center text-white max-w-2xl px-6">
+                                    <span class="block text-sm uppercase tracking-wider text-white">
+                                        Bopdev Ghat
+                                    </span>
+                                    <h2 class="mt-2 text-2xl md:text-4xl font-semibold leading-tight text-white">
+                                        Experience the Allure of Bopdev Ghat
+                                    </h2>
+                                    <div class="mt-5">
+                                        <a class="py-3 px-5 inline-flex items-center gap-x-2 text-sm font-medium rounded-full bg-[#C5964A] text-white hover:bg-gray-100 transition"
+                                            href="#">
+                                            Schedule a Visit
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Indicator Dots -->
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+                        data-slide="0"></button>
+                    <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+                        data-slide="1"></button>
+                </div>
+            </div>
+        </section>
+        
+
+      <!-- about -->
+
+      <section class="px-8 md:px-20 py-16 mx-auto w-full bg-white">
+        <div
+          class="grid gap-12 lg:grid-cols-2 items-center max-w-screen-2xl mx-auto"
+        >
+          <!-- Left Column - Content -->
+          <div class="flex flex-col justify-center animate-fadeIn">
+            <div class="mb-6">
+              <h2
+                class="mb-5 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-tight"
+              >
+              Experience the Allure of Bopdev Ghat
+              </h2>
+              <p class="text-lg leading-relaxed">
+                Perched at the southern edge of Pune, Bopdev Ghat is a stunning hill pass that offers a
+                perfect blend of natural beauty and accessibility. Situated on the Pune-Saswad Road, this
+                serene destination lies just 10 km from bustling localities like Kondhwa and NIBM, making it
+                a hidden gem for those seeking peace without straying far from city conveniences.
+                For spiritual seekers, the region is rich in heritage, with iconic spots like the Kaas Plateau
+(Valley of Flowers) and the famous Khandoba Temple at Jejuri within driving distance.
+The nearby areas are dotted with farms and scenic trails, making it a haven for adventure
+enthusiasts, trekkers, and cyclists.
+              </p>
+            </div>
+
+            <!-- <p class="mb-4 text-sm font-bold tracking-widest uppercase text-[#705028]">Why Choose Us?</p>
+      
+            <div class="grid sm:grid-cols-2 gap-8">
+              <ul class="space-y-5">
+                <li class="flex items-center space-x-3 group">
+                  <span class="icon">
+                    <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                      stroke="currentColor" viewBox="0 0 52 52">
+                      <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                  </span>
+                  <span class="text-[#705028] font-semibold text-lg">Premium Commercial Spaces</span>
+                </li>
+                <li class="flex items-center space-x-3 group">
+                  <span class="icon">
+                    <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                      stroke="currentColor" viewBox="0 0 52 52">
+                      <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                  </span>
+                  <span class="text-[#705028] font-semibold text-lg">Up to 18% ROI Annually</span>
+                </li>
+                <li class="flex items-center space-x-3 group">
+                  <span class="icon">
+                    <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                      stroke="currentColor" viewBox="0 0 52 52">
+                      <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                  </span>
+                  <span class="text-[#705028] font-semibold text-lg">High Leasing Demand</span>
+                </li>
+              </ul>
+      
+              <ul class="space-y-5">
+                <li class="flex items-center space-x-3 group">
+                  <span class="icon">
+                    <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                      stroke="currentColor" viewBox="0 0 52 52">
+                      <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                  </span>
+                  <span class="text-[#705028] font-semibold text-lg">Secure & Verified Investments</span>
+                </li>
+                <li class="flex items-center space-x-3 group">
+                  <span class="icon">
+                    <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                      stroke="currentColor" viewBox="0 0 52 52">
+                      <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                  </span>
+                  <span class="text-[#705028] font-semibold text-lg">Prime Business Locations</span>
+                </li>
+                <li class="flex items-center space-x-3 group">
+                  <span class="icon">
+                    <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                      stroke="currentColor" viewBox="0 0 52 52">
+                      <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                    </svg>
+                  </span>
+                  <span class="text-[#705028] font-semibold text-lg">Exclusive Investor Benefits</span>
+                </li>
+              </ul>
+            </div> -->
+
+            <div class="mt-8">
+              <a
+                href="#"
+                class="px-6 py-3 text-lg font-semibold text-white bg-[#C5964A] rounded-lg shadow-md hover:bg-[#b5833f] transition duration-300"
+              >
+                Explore More
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column - Image (Border Removed) -->
+          <div class="relative group animate-fadeIn">
+            <img
+              class="object-cover w-full h-[380px] sm:h-[450px] rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300"
+              src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+              alt="Investment Property"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- vertical-cards -->
+
+      <section class="px-12 bg-white">
+        <div
+          class="container mx-auto flex flex-col lg:flex-row justify-between h-full py-[100px]"
+        >
+          <div class="h-[300px] sticky top-[4vh] lg:top-[10vh] text-left">
+            <h1 class="text-4xl font-bold text-black">Why Bopdev Ghat is Ideal for <br>Premium NA Villa Plots</h1>
+            <p class="text-lg text-gray-700 mt-4 max-w-md">
+                Experience luxury living amidst the breathtaking Sahyadri backdrop, just 30 minutes from Pune. Enjoy fresh air, scenic views, and a thriving locale perfect for your dream villa.
+            </p>
+          </div>
+          <div class="flex flex-col justify-start items-start gap-12 sticky">
+            <div
+            class="bg-red-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
+          >
+            <h2 class="text-4xl font-bold text-red-800">
+              Breathtaking Views & <br> Prime Location
+            </h2>
+            <p class="text-left text-red-700 mt-8">
+              Wake up to the stunning Sahyadri mountains and a peaceful, nature-filled ambiance that makes every day feel like a retreat. Located just 30 minutes from Pune’s central hubs and an hour from the airport, this prime location offers seamless connectivity via Pune-Saswad Road, ensuring convenience without compromising on tranquility.
+            </p>
+          </div>
+          
+            <div
+              class="bg-green-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
+            >
+              <h2 class="text-4xl font-bold text-green-800">Healthier & Luxurious <br> Living</h2>
+              <p class="text-left text-green-700 mt-8">
+                Breathe in fresh, unpolluted air surrounded by lush greenery, creating a stress-free and rejuvenating lifestyle. This emerging hotspot is set to become a premium residential destination, offering high-end living with promising appreciation potential. Whether for a peaceful getaway or a long-term home, this location perfectly blends nature and luxury.
+              </p>
+            </div>
+            <div
+              class="bg-yellow-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
+            >
+              <h2 class="text-4xl font-bold text-yellow-800">Adventure & Relaxation <br> at Your Doorstep</h2>
+              <p class="text-left text-yellow-700 mt-8">
+                Enjoy the best of both worlds with easy access to scenic trekking trails, breathtaking waterfalls, and outdoor adventure spots. Whether you're seeking a weekend of thrill or a moment of peace, this location provides endless opportunities to unwind and explore. Build your dream villa in a destination that enhances both excitement and serenity.
+              </p>
+            </div>
+            <div
+              class="bg-purple-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
+            >
+              <h2 class="text-4xl font-bold text-purple-800">A Smart Investment <br> for the Future</h2>
+              <p class="text-left text-purple-700 mt-8">
+                With Pune’s rapid urban expansion and growing demand for premium developments, this area presents a remarkable investment opportunity. Its proximity to key infrastructural developments ensures long-term growth, making it an ideal choice for both personal living and future returns. Secure your place in a thriving, well-connected, and high-potential locality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- walkthrough-video -->
+
+      <section class="w-full bg-white py-6 md:py-12 bg-white" id="connect">
+        <div class="w-full max-w-[1400px] mx-auto px-4">
+          <!-- Video Section -->
+          <div
+            class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] rounded-[20px] overflow-hidden"
+          >
+            <iframe
+              class="w-full h-full rounded-[20px]"
+              src="https://www.youtube.com/embed/S7IP1nzh36Q?autoplay=1&mute=1&loop=1&playlist=S7IP1nzh36Q"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-8 md:px-20 py-16 mx-auto w-full bg-white">
+        <div
+          class="grid gap-12 lg:grid-cols-2 items-center max-w-screen-2xl mx-auto"
+        >
+        
+          <!-- Left Column - Content -->
+          <div class="flex flex-col justify-center animate-fadeIn">
+            <div class="mb-6">
+              <h2
+                class="mb-5 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-tight"
+              >
+                Invest in Prime Real Estate <br>
+                for Maximum Returns
+              </h2>
+              <p class="text-lg leading-relaxed">
+                Experience serene living amidst the breathtaking Sahyadri hills, where lush greenery and panoramic views create a peaceful retreat. Conveniently located just 30 minutes from Pune and an hour from the airport, this prime destination offers excellent connectivity via Pune-Saswad Road. With pollution-free air and a wellness-focused environment, it’s perfect for a healthier lifestyle. Developed by the trusted Menlo Realty, the area is rapidly emerging as a real estate hotspot, offering high investment potential with growing demand for second homes. Surrounded by cultural landmarks and recreational spots like Kanifnath and Jejuri Temples, this location seamlessly blends nature, comfort, and long-term value.
+              </p>
+            </div>
+
+            <!-- <p class="mb-4 text-sm font-bold tracking-widest uppercase text-[#705028]">Why Choose Us?</p>
+          
+                <div class="grid sm:grid-cols-2 gap-8">
+                  <ul class="space-y-5">
+                    <li class="flex items-center space-x-3 group">
+                      <span class="icon">
+                        <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                          stroke="currentColor" viewBox="0 0 52 52">
+                          <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                            points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                      </span>
+                      <span class="text-[#705028] font-semibold text-lg">Premium Commercial Spaces</span>
+                    </li>
+                    <li class="flex items-center space-x-3 group">
+                      <span class="icon">
+                        <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                          stroke="currentColor" viewBox="0 0 52 52">
+                          <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                            points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                      </span>
+                      <span class="text-[#705028] font-semibold text-lg">Up to 18% ROI Annually</span>
+                    </li>
+                    <li class="flex items-center space-x-3 group">
+                      <span class="icon">
+                        <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                          stroke="currentColor" viewBox="0 0 52 52">
+                          <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                            points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                      </span>
+                      <span class="text-[#705028] font-semibold text-lg">High Leasing Demand</span>
+                    </li>
+                  </ul>
+          
+                  <ul class="space-y-5">
+                    <li class="flex items-center space-x-3 group">
+                      <span class="icon">
+                        <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                          stroke="currentColor" viewBox="0 0 52 52">
+                          <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                            points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                      </span>
+                      <span class="text-[#705028] font-semibold text-lg">Secure & Verified Investments</span>
+                    </li>
+                    <li class="flex items-center space-x-3 group">
+                      <span class="icon">
+                        <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                          stroke="currentColor" viewBox="0 0 52 52">
+                          <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                            points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                      </span>
+                      <span class="text-[#705028] font-semibold text-lg">Prime Business Locations</span>
+                    </li>
+                    <li class="flex items-center space-x-3 group">
+                      <span class="icon">
+                        <svg class="w-6 h-6 text-[#C5964A] group-hover:scale-110 transition-transform duration-200"
+                          stroke="currentColor" viewBox="0 0 52 52">
+                          <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                            points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                      </span>
+                      <span class="text-[#705028] font-semibold text-lg">Exclusive Investor Benefits</span>
+                    </li>
+                  </ul>
+                </div> -->
+
+            <div class="mt-8">
+              <a
+                href="#"
+                class="px-6 py-3 text-lg font-semibold text-white bg-[#C5964A] rounded-lg shadow-md hover:bg-[#b5833f] transition duration-300"
+              >
+                Explore More
+              </a>
+            </div>
+          </div>
+          <div class="relative group animate-fadeIn">
+            <img
+              class="object-cover w-full h-[380px] sm:h-[450px] rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300"
+              src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+              alt="Investment Property"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- asycn-cards -->
+
+      <section class="w-full p-6 md:p-12 bg-white">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <!-- Image Section -->
+          <div class="w-full">
+            <img
+              src="./images/hero1.webp"
+              alt="Placeholder Image"
+              class="w-full h-auto md:h-full object-cover rounded-lg"
+            />
+          </div>
+
+          <!-- Text and Features Section -->
+          <div
+            class="flex flex-col gap-6 md:gap-8 justify-center px-4 md:px-10"
+          >
+            <!-- Heading and Description -->
+            <div class="bg-blue-100 p-6 md:p-10 rounded-lg text-center">
+              <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
+                Lorem Ipsum Dolor Sit Amet
+              </h2>
+              <p class="text-gray-700 text-base md:text-lg mt-3 md:mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+
+            <!-- Feature Boxes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div
+                class="bg-blue-100 p-6 md:p-8 rounded-lg text-center flex flex-col items-center"
+              >
+                <span class="text-3xl md:text-4xl">☀️</span>
+                <p
+                  class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
+                >
+                  Lorem ipsum dolor sit amet
+                </p>
+              </div>
+              <div
+                class="bg-blue-100 p-6 md:p-8 rounded-lg text-center flex flex-col items-center"
+              >
+                <span class="text-3xl md:text-4xl">🏡</span>
+                <p
+                  class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
+                >
+                  Consectetur adipiscing elit
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full p-6 md:p-12 bg-white">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <!-- Image Section -->
+
+          <!-- Text and Features Section -->
+          <div
+            class="flex flex-col gap-6 md:gap-8 justify-center px-4 md:px-10"
+          >
+            <!-- Heading and Description -->
+            <div class="bg-blue-100 p-6 md:p-10 rounded-lg text-center">
+              <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
+                Lorem Ipsum Dolor Sit Amet
+              </h2>
+              <p class="text-gray-700 text-base md:text-lg mt-3 md:mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+
+            <!-- Feature Boxes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div
+                class="bg-blue-100 p-6 md:p-8 rounded-lg text-center flex flex-col items-center"
+              >
+                <span class="text-3xl md:text-4xl">☀️</span>
+                <p
+                  class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
+                >
+                  Lorem ipsum dolor sit amet
+                </p>
+              </div>
+              <div
+                class="bg-blue-100 p-6 md:p-8 rounded-lg text-center flex flex-col items-center"
+              >
+                <span class="text-3xl md:text-4xl">🏡</span>
+                <p
+                  class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
+                >
+                  Consectetur adipiscing elit
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <img
+              src="./images/hero1.webp"
+              alt="Placeholder Image"
+              class="w-full h-auto md:h-full object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Gallery -->
+
+      <section class="unique-gallery-section bg-white" id="gallery">
+        <h1 class="benefits-title"><span class="gold2"></span></h1>
+        <div class="gallery-container">
+          <div class="gallery-scroll-container" id="galleryScroll">
+            <div class="gallery-item">
+              <img
+                src="./images/hero1.webp"
+                alt="Aerial View of Residential Area"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./images/hero2.webp"
+                alt="Scenic View of Dam and Waterbody"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./images/hero3.webp"
+                alt="Scenic View of Dam and Waterbody"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./images/hero4.webp"
+                alt="Scenic View of Dam and Waterbody"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="./images/hero5.webp"
+                alt="Scenic View of Dam and Waterbody"
+              />
+            </div>
+          </div>
+
+          <!-- Scroll buttons -->
+          <div class="scroll-btn-left" id="scrollLeft">←</div>
+          <div class="scroll-btn-right" id="scrollRight">→</div>
+        </div>
+
+        <!-- Download Brochure Button -->
+        <!-- <div class="download-brochure-btn-container">
+            <button class="btn2">Download Brochure</button>
+          </div> -->
+      </section>
+
+      <section class="py-16 px-16 lg:px-24 bg-white">
+        <div class="mx-auto max-w-7xl text-center mb-12">
+          <h2 class="text-4xl font-bold">Seamlessly Connected to Everything</h2>
+          <p class="mt-4 text-lg">
+            Live at the heart of convenience with effortless access to key locations for education, travel, and leisure.
+          </p>
+        </div>
+      
+        <!-- Grid Layout -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Educational Institutions -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">Educational Institutions</h3>
+            <ul class="list-disc list-inside">
+              <li>KJ College of Engineering - 20 mins</li>
+              <li>JSPM School and College - 30 mins</li>
+            </ul>
+          </div>
+      
+          <!-- Transportation Hubs -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">Transportation Hubs</h3>
+            <ul class="list-disc list-inside">
+              <li>Khadi Machine Chowk - 20 mins</li>
+              <li>Pune Railway Station - 60 mins</li>
+              <li>Katraj Chowk - 30 mins</li>
+            </ul>
+          </div>
+      
+          <!-- Religious & Landmark Locations -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">Religious & Landmark Locations</h3>
+            <ul class="list-disc list-inside">
+              <li>ISKCON Temple - 25 mins</li>
+              <li>Proposed Purandar Airport - 30 mins</li>
+            </ul>
+          </div>
+      
+          <!-- Hotels & Dining -->
+          <!-- <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">Hotels & Dining</h3>
+            <ul class="list-disc list-inside">
+              <li>Mount 21 - 2 mins</li>
+              <li>Rashmi Misal and Snacks - 1 min</li>
+            </ul>
+          </div> -->
+        </div>
+      </section>
+      
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Column -->
+        <div class="footer-left">
+          <div class="footer-item">
+            <h3 class="footer-title">Strategic Partner</h3>
+            <img
+              src="./images/maestro logo white.webp"
+              alt="Partner Logo"
+              class="footer-logo"
+            />
+          </div>
+          <div class="footer-item">
+            <img
+              src="./assets/image/ibz.png"
+              alt="Project Logo"
+              class="footer-logo"
+            />
+          </div>
+          <div class="footer-item">
+            <h3 class="footer-title">Location</h3>
+            <p class="footer-text">Pune, Maharashtra</p>
+          </div>
+          <div class="footer-item">
+            <h3 class="footer-title">Scan QR Code</h3>
+            <img
+              src="./assets/image/qr.jpg"
+              alt="QR Code"
+              class="footer-qr-code"
+            />
+          </div>
+          <div class="footer-item">
+            <a href="https://maharera.mahaonline.gov.in" class="footer-link"
+              >https://maharera.mahaonline.gov.in</a
+            >
+            <p class="footer-text">P52100078861</p>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="footer-right">
+          <h3 class="footer-form-title">
+            Begin Your Journey to Serene Living!
+          </h3>
+          <form action="#" method="POST" class="footer-form">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <!-- <div class="form-field checkbox">
+                            <input type="checkbox" id="consent" name="consent">
+                            <label for="consent">I authorize Codename Livecool and its representatives to Call, SMS, Email, or WhatsApp me about its products and offers. This consent overrides any registration for DNC / NDNC.</label>
+                        </div> -->
+            <button type="submit" class="footer-button">Submit</button>
+          </form>
+          <!-- <div class="custom-social-links">
+              <a href="https://www.instagram.com/ilifebusinesszone?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" class="custom-social-icon">
+                <img src="./assets/image/instagram.png" alt="Instagram" />
+              </a>
+              <a href="https://www.facebook.com/share/18cAYzEpbY/" target="_blank" class="custom-social-icon">
+                <img src="./assets/image/facebook.png" alt="Facebook" />
+              </a>
+              <a href="https://www.youtube.com/@iLifeBusinessZone" target="_blank" class="custom-social-icon">
+                <img src="./assets/image/youtube.png" alt="YouTube" />
+              </a>
+            </div> -->
+        </div>
+      </div>
+
+      <!-- Footer Text (Center) -->
+      <div class="footer-text-center">
+        <p>
+          &copy; 2025 |
+          <a href="./privacy-policy.html" class="footer-link">Privacy Policy</a>
+          | Terms and Conditions
+        </p>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>

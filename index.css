@@ -1,3 +1,404 @@
 body{
-    background-color: blueviolet;    
+    background-color: white;    
 }
+
+.unique-gallery-section {
+    padding: 50px 20px 20px 20px;
+  }
+  .gallery-container {
+    position: relative;
+  }
+  
+  .gallery-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .gallery-item {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    margin: 0 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .scroll-btn-left,
+  .scroll-btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /* Light black color */
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 999;
+  }
+  
+  .scroll-btn-left {
+    left: 10px;
+  }
+  
+  .scroll-btn-right {
+    right: 10px;
+  }
+  
+  .scroll-btn-left:hover,
+  .scroll-btn-right:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Download Brochure Button Styles */
+  .download-brochure-btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .download-brochure-btn-container .btn2 {
+    padding: 12px 20px;
+    background-color: #c5964a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-brochure-btn-container .btn2:hover {
+    background-color: #b4873b;
+  }
+  
+  /* .benefits-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #444;
+    } */
+  
+  .gallery-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .gallery-scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+  
+  .gallery-item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .gallery-scroll-container {
+      gap: 10px;
+      margin-left: 20px;
+      margin-bottom: 30px;
+    }
+  
+    .gallery-item {
+      max-width: 350px;
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-item {
+      max-width: 300px;
+      height: 200px;
+    }
+  
+    .benefits-title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* General Section Styling */
+  /* Single Image Container */
+  .golden-jejuri-image-container {
+    width: 100%; /* Full width of the container */
+    margin: 0 auto;
+    padding: 0 20px 30px 20px; /* Adjusted padding for smaller devices */
+    /* border-radius: 20px; */
+    overflow: hidden;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .golden-jejuri-image-container img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  .get-directions-button {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .get-directions-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c5964a; /*  color, you can adjust as needed */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+  }
+  
+  .get-directions-link:hover {
+    background-color: #b38c14; /* Darker  on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .golden-jejuri-image-container {
+      padding: 0 10px 30px 10px;
+      /* Adjusted padding for smaller devices */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .golden-jejuri-image-container {
+      padding: 0 10px 0 10px; /* No padding for very small devices */
+      height: 200px;
+    }
+  }
+
+
+  .footer {
+    background-image: url("./images/hero2.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 20px 5%; /* Reduced padding to make footer smaller */
+    color: white;
+    z-index: 1;
+  }
+  
+  /* Black Overlay */
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black overlay with transparency */
+    z-index: 0;
+    pointer-events: none; /* Ensure overlay doesn't block interactions */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .footer-left,
+  .footer-right {
+    background: none; /* Removed glassmorphism */
+    border-radius: 5px;
+    padding: 15px;
+    width: 48%;
+    margin-bottom: 15px;
+  }
+  
+  /* .footer-item img{
+  max-height: 75px;
+  } */
+  .footer-left .footer-item,
+  .footer-right .footer-item {
+    margin-bottom: 15px;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem; /* Slightly smaller font */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  .footer-text,
+  .footer-link {
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+    color: #c5964a;
+  }
+  
+  .footer-logo {
+    max-width: 150px; /* Reduced size */
+    width: 100%;
+    max-height: 75px;
+  }
+  .footer-qr-code {
+    max-width: 100px; /* Reduced size */
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Form Styling */
+  .footer-form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .footer-form {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay background */
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .form-field {
+    margin-bottom: 10px;
+  }
+  
+  .form-field label {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-field input {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+  }
+  
+  .footer-button {
+    background-color: #c5964a;
+    color: white;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .footer-button:hover {
+    background-color: #c5964a;
+  }
+  
+  /* Center Footer Text */
+  .footer-text-center {
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    position: relative;
+    z-index: 2; /* Ensure text remains clickable */
+  }
+  
+  .footer-text-center p {
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .footer-text-center a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-text-center a:hover {
+    text-decoration: underline;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  
+    .footer-left,
+    .footer-right {
+      width: 100%;
+    }
+  
+    .footer-item {
+      margin-bottom: 10px;
+    }
+  }
+  .custom-social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .custom-social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-social-icon img:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .social-btn img {
+    width: 35px;
+    height: 35px;
+  }
