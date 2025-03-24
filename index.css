@@ -7,36 +7,66 @@ body{
 }
 .gallery-container {
   position: relative;
+  width: 100%;
+  overflow: hidden; /* Prevents horizontal scrolling */
+  padding: 0;
+  margin: 0;
 }
 
 .gallery-scroll-container {
   display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 100vw; /* Ensures it doesn’t exceed viewport width */
+  -ms-overflow-style: none; /* Hide scrollbar for IE & Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.gallery-scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
 }
 
 .gallery-item {
-  flex-shrink: 0;
-  width: 200px;
-  height: 200px;
-  margin: 0 10px;
-  background-color: #f1f1f1;
-  border-radius: 10px;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 400px; /* Adjust based on preference */
+  height: auto;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Scroll Buttons */
 .scroll-btn-left,
 .scroll-btn-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.3); /* Light black color */
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   border: none;
   font-size: 24px;
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   z-index: 999;
 }
 
@@ -51,108 +81,38 @@ body{
 .scroll-btn-left:hover,
 .scroll-btn-right:hover {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Download Brochure Button Styles */
-.download-brochure-btn-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.download-brochure-btn-container .btn2 {
-  padding: 12px 20px;
-  background-color: #c5964a;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  font-size: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.download-brochure-btn-container .btn2:hover {
-  background-color: #b4873b;
-}
-
-/* .benefits-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #444;
-  } */
-
-.gallery-scroll-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 10px;
-  scroll-snap-type: x mandatory;
-  margin-left: 40px;
-  margin-bottom: 10px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.gallery-scroll-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
-}
-
-.gallery-item {
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
-  scroll-snap-align: start;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  transform: translateY(-50%) scale(1.1);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .gallery-scroll-container {
     gap: 10px;
-    margin-left: 20px;
-    margin-bottom: 30px;
   }
 
   .gallery-item {
     max-width: 350px;
-    height: 250px;
+  }
+
+  .scroll-btn-left,
+  .scroll-btn-right {
+    font-size: 20px;
+    padding: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .gallery-item {
     max-width: 300px;
-    height: 200px;
   }
 
-  .benefits-title {
-    font-size: 1.5rem;
+  .scroll-btn-left,
+  .scroll-btn-right {
+    font-size: 18px;
+    padding: 10px;
   }
 }
 
-/* General Section Styling */
-/* Single Image Container */
-.golden-jejuri-image-container {
-  width: 100%; /* Full width of the container */
-  margin: 0 auto;
-  padding: 0 20px 30px 20px; /* Adjusted padding for smaller devices */
-  /* border-radius: 20px; */
-  overflow: hidden;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .golden-jejuri-image-container img {
   width: 100%; /* Full width of the container */
@@ -196,7 +156,35 @@ body{
   }
 }
 
+/* Download Brochure Button Styles */
+.download-brochure-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
 
+.download-brochure-btn-container .btn2 {
+  padding: 12px 20px;
+  background-color: #c5964a;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-brochure-btn-container .btn2:hover {
+  background-color: #b4873b;
+}
+
+/* .benefits-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #444;
+  } */
 .footer {
   background-image: url("./images/hero2.webp");
   background-position: center;

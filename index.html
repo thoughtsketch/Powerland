@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhodev-Ghat</title>
+    <title>Codename PowerLand</title>
     <link rel="stylesheet" href="./index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./image/logo-white.png" type="image/x-icon">
   </head>
   <body class="bg-gray-100">
-    <div id="popupOverlay">
+    <!-- <div id="popupOverlay">
       <div id="popupForm">
         <span class="close-btn" onclick="closeForm()">&times;</span>
         <div class="form-logo">
@@ -21,20 +22,24 @@
           <input type="tel" id="mobile" placeholder="Your Phone" required />
           <label>
             <input type="checkbox" id="termsCheckbox" required />
-            I authorize Codename PowerLand and its representatives to Call,
+            I authorize Codename Power Land and its representatives to Call,
             SMS, Email, or WhatsApp me about its products and offers. This
             consent overrides any registration for DNC / NDNC.
           </label>
           <button type="submit" id="submitButton">Submit</button>
         </form>
       </div>
-    </div>
+    </div> -->
     <nav
       class="bg-white py-1 px-8 flex items-center justify-between flex-wrap md:flex-nowrap relative"
     >
       <!-- Left Logo -->
       <div class="flex-shrink-0">
-        <img src="./image/BOPDEV GHAT Route V6-17.png" alt="Logo1" class="h-16  w-55" />
+        <img
+          src="./image/BOPDEV GHAT Route V6-17.png"
+          alt="Logo1"
+          class="h-16 w-55"
+        />
       </div>
 
       <!-- Navigation Container (Desktop) -->
@@ -44,15 +49,33 @@
         <ul
           class="flex space-x-4 md:space-x-6 text-gray-900 text-base font-normal"
         >
-          <li><a href="#" class="bg-white px-6 py-2 rounded-full">Home</a></li>
-          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">About Us</a></li>
-          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">Gallery</a></li>
-          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">Location</a></li>
-          <li><a href="#" class="hover:bg-white px-6 py-2 rounded-full">Contact Us</a></li>
+          <li><a href="#home" class="bg-white px-6 py-2 rounded-full">Home</a></li>
+          <li>
+            <a href="#about" class="hover:bg-white px-6 py-2 rounded-full"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="#gallery" class="hover:bg-white px-6 py-2 rounded-full"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a href="#location" class="hover:bg-white px-6 py-2 rounded-full"
+              >Location</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:bg-white px-6 py-2 rounded-full"
+              >Contact Us</a
+            >
+          </li>
         </ul>
 
         <!-- Contact Number -->
-        <div class="text-gray-900 text-base font-normal">+91 9742069669</div>
+        <a href="tel:+919071036055" class="text-gray-900 text-base font-normal"
+          >+91 90710 36055</a
+        >
       </div>
 
       <!-- Right Logo (Hidden on Tablet/Mobile) -->
@@ -137,57 +160,101 @@
       </div>
     </div>
     <main>
-      <section class="px-0 sm:px-0 lg:px-0 py-0 relative bg-white">
-        <div class="relative">
-          <div class="hs-carousel relative overflow-hidden w-full min-h-[50vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[calc(100vh-106px)]  shadow-lg">
-            <div class="hs-carousel-body flex transition-transform duration-700 ease-in-out h-full" id="carouselBody">
+      <section class="relative bg-white overflow-hidden" id="home">
+        <div class="relative w-full h-auto">
+          <div class="hs-carousel relative w-full h-auto shadow-lg">
+            <div
+              class="hs-carousel-body flex transition-transform duration-700 ease-in-out"
+              id="carouselBody"
+            >
               <!-- Slide 1 -->
-              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
-                <div class="relative w-full h-full">
-                  <img src="./image/hero1.jpg" class="w-full h-full object-cover" alt="Slide 1">
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
+                <div class="relative w-full h-auto">
+                  <img
+                    src="./image/hero1.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Slide 1"
+                  />
                 </div>
               </div>
-      
+
               <!-- Slide 2 -->
-              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
-                <div class="relative w-full h-full">
-                  <img src="./image/hero2.jpg" class="w-full h-full object-cover " alt="Slide 2">
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
+                <div class="relative w-full h-auto">
+                  <img
+                    src="./image/hero2.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Slide 2"
+                  />
                 </div>
               </div>
 
-              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
-                <div class="relative w-full h-full">
-                  <img src="./image/hero3.jpg" class="w-full h-full object-cover " alt="Slide 2">
+              <!-- Slide 3 -->
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
+                <div class="relative w-full h-auto">
+                  <img
+                    src="./image/hero3.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Slide 3"
+                  />
                 </div>
               </div>
 
-              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
-                <div class="relative w-full h-full">
-                  <img src="./image/hero4.jpg" class="w-full h-full object-cover " alt="Slide 2">
+              <!-- Slide 4 -->
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
+                <div class="relative w-full h-auto">
+                  <img
+                    src="./image/hero4.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Slide 4"
+                  />
                 </div>
               </div>
 
-              <div class="hs-carousel-slide flex-shrink-0 w-full h-full">
-                <div class="relative w-full h-full">
-                  <img src="./image/hero5.jpg" class="w-full h-full object-cover " alt="Slide 2">
+              <!-- Slide 5 -->
+              <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
+                <div class="relative w-full h-auto">
+                  <img
+                    src="./image/hero5.jpg"
+                    class="w-full h-full object-contain"
+                    alt="Slide 5"
+                  />
                 </div>
               </div>
             </div>
           </div>
-      
+
           <!-- Indicator Dots -->
-          <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition" data-slide="0"></button>
-            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition" data-slide="1"></button>
+          <div
+            class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2"
+          >
+            <button
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="0"
+            ></button>
+            <button
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="1"
+            ></button>
+            <button
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="2"
+            ></button>
+            <button
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="3"
+            ></button>
+            <button
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="4"
+            ></button>
           </div>
         </div>
       </section>
-      
-        
 
       <!-- about -->
 
-      <section class="px-8 md:px-20 py-16 mx-auto w-full bg-white">
+      <section class="px-8 md:px-20 py-16 mx-auto w-full bg-white" id="about">
         <div
           class="grid gap-12 lg:grid-cols-2 items-center max-w-screen-2xl mx-auto"
         >
@@ -197,17 +264,20 @@
               <h2
                 class="mb-5 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-tight"
               >
-              Experience the Allure of Bopdev Ghat
+                Experience the Allure of Bopdev Ghat
               </h2>
               <p class="text-lg leading-relaxed">
-                Perched at the southern edge of Pune, Bopdev Ghat is a stunning hill pass that offers a
-                perfect blend of natural beauty and accessibility. Situated on the Pune-Saswad Road, this
-                serene destination lies just 10 km from bustling localities like Kondhwa and NIBM, making it
-                a hidden gem for those seeking peace without straying far from city conveniences.
-                For spiritual seekers, the region is rich in heritage, with iconic spots like the Kaas Plateau
-(Valley of Flowers) and the famous Khandoba Temple at Jejuri within driving distance.
-The nearby areas are dotted with farms and scenic trails, making it a haven for adventure
-enthusiasts, trekkers, and cyclists.
+                Perched at the southern edge of Pune, Bopdev Ghat is a stunning
+                hill pass that offers a perfect blend of natural beauty and
+                accessibility. Situated on the Pune-Saswad Road, this serene
+                destination lies just 10 km from bustling localities like
+                Kondhwa and NIBM, making it a hidden gem for those seeking peace
+                without straying far from city conveniences. For spiritual
+                seekers, the region is rich in heritage, with iconic spots like
+                the Kaas Plateau (Valley of Flowers) and the famous Khandoba
+                Temple at Jejuri within driving distance. The nearby areas are
+                dotted with farms and scenic trails, making it a haven for
+                adventure enthusiasts, trekkers, and cyclists.
               </p>
             </div>
 
@@ -294,8 +364,8 @@ enthusiasts, trekkers, and cyclists.
           <!-- Right Column - Image (Border Removed) -->
           <div class="relative group animate-fadeIn">
             <img
-              class="object-cover w-full h-[380px] sm:h-[450px] rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300"
-              src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+              class="object-cover w-full h-auto max-h-[500px] sm:max-h-[600px] rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300"
+              src="./image/hero3.jpg"
               alt="Investment Property"
             />
           </div>
@@ -309,45 +379,79 @@ enthusiasts, trekkers, and cyclists.
           class="container mx-auto flex flex-col lg:flex-row justify-between h-full py-[100px]"
         >
           <div class="h-[300px] sticky top-[4vh] lg:top-[10vh] text-left">
-            <h1 class="text-4xl font-bold text-black">Why Bopdev Ghat is Ideal for <br>Premium NA Villa Plots</h1>
+            <h1 class="text-4xl font-bold text-black">
+              Why Bopdev Ghat is Ideal for <br />Premium NA Villa Plots
+            </h1>
             <p class="text-lg text-gray-700 mt-4 max-w-md">
-                Experience luxury living amidst the breathtaking Sahyadri backdrop, just 30 minutes from Pune. Enjoy fresh air, scenic views, and a thriving locale perfect for your dream villa.
+              Experience luxury living amidst the breathtaking Sahyadri
+              backdrop, just 30 minutes from Pune. Enjoy fresh air, scenic
+              views, and a thriving locale perfect for your dream villa.
             </p>
           </div>
           <div class="flex flex-col justify-start items-start gap-12 sticky">
             <div
-            class="bg-red-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
-          >
-            <h2 class="text-4xl font-bold text-red-800">
-              Breathtaking Views & <br> Prime Location
-            </h2>
-            <p class="text-left text-red-700 mt-8">
-              Wake up to the stunning Sahyadri mountains and a peaceful, nature-filled ambiance that makes every day feel like a retreat. Located just 30 minutes from Pune’s central hubs and an hour from the airport, this prime location offers seamless connectivity via Pune-Saswad Road, ensuring convenience without compromising on tranquility.
-            </p>
-          </div>
-          
+              class="bg-red-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
+            >
+              <h2 class="text-4xl font-bold text-red-800">
+                Breathtaking Views & <br />
+                Prime Location
+              </h2>
+              <p class="text-left text-red-700 mt-8">
+                Wake up to the stunning Sahyadri mountains and a peaceful,
+                nature-filled ambiance that makes every day feel like a retreat.
+                Located just 30 minutes from Pune’s central hubs and an hour
+                from the airport, this prime location offers seamless
+                connectivity via Pune-Saswad Road, ensuring convenience without
+                compromising on tranquility.
+              </p>
+            </div>
+
             <div
               class="bg-green-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
             >
-              <h2 class="text-4xl font-bold text-green-800">Healthier & Luxurious <br> Living</h2>
+              <h2 class="text-4xl font-bold text-green-800">
+                Healthier & Luxurious <br />
+                Living
+              </h2>
               <p class="text-left text-green-700 mt-8">
-                Breathe in fresh, unpolluted air surrounded by lush greenery, creating a stress-free and rejuvenating lifestyle. This emerging hotspot is set to become a premium residential destination, offering high-end living with promising appreciation potential. Whether for a peaceful getaway or a long-term home, this location perfectly blends nature and luxury.
+                Breathe in fresh, unpolluted air surrounded by lush greenery,
+                creating a stress-free and rejuvenating lifestyle. This emerging
+                hotspot is set to become a premium residential destination,
+                offering high-end living with promising appreciation potential.
+                Whether for a peaceful getaway or a long-term home, this
+                location perfectly blends nature and luxury.
               </p>
             </div>
             <div
               class="bg-yellow-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
             >
-              <h2 class="text-4xl font-bold text-yellow-800">Adventure & Relaxation <br> at Your Doorstep</h2>
+              <h2 class="text-4xl font-bold text-yellow-800">
+                Adventure & Relaxation <br />
+                at Your Doorstep
+              </h2>
               <p class="text-left text-yellow-700 mt-8">
-                Enjoy the best of both worlds with easy access to scenic trekking trails, breathtaking waterfalls, and outdoor adventure spots. Whether you're seeking a weekend of thrill or a moment of peace, this location provides endless opportunities to unwind and explore. Build your dream villa in a destination that enhances both excitement and serenity.
+                Enjoy the best of both worlds with easy access to scenic
+                trekking trails, breathtaking waterfalls, and outdoor adventure
+                spots. Whether you're seeking a weekend of thrill or a moment of
+                peace, this location provides endless opportunities to unwind
+                and explore. Build your dream villa in a destination that
+                enhances both excitement and serenity.
               </p>
             </div>
             <div
               class="bg-purple-200 w-[300px] rounded-3xl flex flex-col items-start justify-start md:w-[700px] h-[500px] top-[10vh] sticky p-6"
             >
-              <h2 class="text-4xl font-bold text-purple-800">A Smart Investment <br> for the Future</h2>
+              <h2 class="text-4xl font-bold text-purple-800">
+                A Smart Investment <br />
+                for the Future
+              </h2>
               <p class="text-left text-purple-700 mt-8">
-                With Pune’s rapid urban expansion and growing demand for premium developments, this area presents a remarkable investment opportunity. Its proximity to key infrastructural developments ensures long-term growth, making it an ideal choice for both personal living and future returns. Secure your place in a thriving, well-connected, and high-potential locality.
+                With Pune’s rapid urban expansion and growing demand for premium
+                developments, this area presents a remarkable investment
+                opportunity. Its proximity to key infrastructural developments
+                ensures long-term growth, making it an ideal choice for both
+                personal living and future returns. Secure your place in a
+                thriving, well-connected, and high-potential locality.
               </p>
             </div>
           </div>
@@ -356,9 +460,9 @@ enthusiasts, trekkers, and cyclists.
 
       <!-- walkthrough-video -->
 
-      <section class="w-full bg-white py-6 md:py-12 bg-white" id="connect">
+      <!-- <section class="w-full bg-white py-6 md:py-12 bg-white" id="connect">
         <div class="w-full max-w-[1400px] mx-auto px-4">
-          <!-- Video Section -->
+
           <div
             class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] rounded-[20px] overflow-hidden"
           >
@@ -373,24 +477,34 @@ enthusiasts, trekkers, and cyclists.
             ></iframe>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="px-8 md:px-20 py-16 mx-auto w-full bg-white">
         <div
           class="grid gap-12 lg:grid-cols-2 items-center max-w-screen-2xl mx-auto"
         >
-        
           <!-- Left Column - Content -->
           <div class="flex flex-col justify-center animate-fadeIn">
             <div class="mb-6">
               <h2
                 class="mb-5 text-3xl font-bold tracking-tight sm:text-4xl sm:leading-tight"
               >
-                Invest in Prime Real Estate <br>
+                Invest in Prime Real Estate <br />
                 for Maximum Returns
               </h2>
               <p class="text-lg leading-relaxed">
-                Experience serene living amidst the breathtaking Sahyadri hills, where lush greenery and panoramic views create a peaceful retreat. Conveniently located just 30 minutes from Pune and an hour from the airport, this prime destination offers excellent connectivity via Pune-Saswad Road. With pollution-free air and a wellness-focused environment, it’s perfect for a healthier lifestyle. Developed by the trusted Menlo Realty, the area is rapidly emerging as a real estate hotspot, offering high investment potential with growing demand for second homes. Surrounded by cultural landmarks and recreational spots like Kanifnath and Jejuri Temples, this location seamlessly blends nature, comfort, and long-term value.
+                Experience serene living amidst the breathtaking Sahyadri hills,
+                where lush greenery and panoramic views create a peaceful
+                retreat. Conveniently located just 30 minutes from Pune and an
+                hour from the airport, this prime destination offers excellent
+                connectivity via Pune-Saswad Road. With pollution-free air and a
+                wellness-focused environment, it’s perfect for a healthier
+                lifestyle. Developed by the trusted Menlo Realty, the area is
+                rapidly emerging as a real estate hotspot, offering high
+                investment potential with growing demand for second homes.
+                Surrounded by cultural landmarks and recreational spots like
+                Kanifnath and Jejuri Temples, this location seamlessly blends
+                nature, comfort, and long-term value.
               </p>
             </div>
 
@@ -475,8 +589,8 @@ enthusiasts, trekkers, and cyclists.
           </div>
           <div class="relative group animate-fadeIn">
             <img
-              class="object-cover w-full h-[380px] sm:h-[450px] rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300"
-              src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+              class="object-cover w-full h-auto max-h-[500px] sm:max-h-[600px] rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300"
+              src="./image/hero2.jpg"
               alt="Investment Property"
             />
           </div>
@@ -486,19 +600,21 @@ enthusiasts, trekkers, and cyclists.
       <!-- asycn-cards -->
 
       <section class="w-full p-6 md:p-12 bg-white">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div
+          class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center"
+        >
           <!-- Image Section -->
-          <div class="w-full">
+          <div class="w-full flex-1">
             <img
-              src="./images/hero1.webp"
+              src="./image/hero2.jpg"
               alt="Placeholder Image"
-              class="w-full h-auto md:h-full object-cover rounded-lg"
+              class="w-full h-auto md:h-full object-contain rounded-lg"
             />
           </div>
 
           <!-- Text and Features Section -->
           <div
-            class="flex flex-col gap-6 md:gap-8 justify-center px-4 md:px-10"
+            class="flex flex-col gap-6 md:gap-8 justify-center px-4 md:px-10 h-full"
           >
             <!-- Heading and Description -->
             <div class="bg-blue-100 p-6 md:p-10 rounded-lg text-center">
@@ -506,8 +622,8 @@ enthusiasts, trekkers, and cyclists.
                 Strengths and Opportunities
               </h2>
               <p class="text-gray-700 text-base md:text-lg mt-3 md:mt-4">
-                Nestled amidst the Sahyadri hills with lush greenery and panoramic
-views, offering a peaceful and picturesque setting.
+                Nestled amidst the Sahyadri hills with lush greenery and
+                panoramic views, offering a peaceful and picturesque setting.
               </p>
             </div>
 
@@ -520,7 +636,7 @@ views, offering a peaceful and picturesque setting.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                Healthy Environment
+                  Healthy Environment
                 </p>
               </div>
               <div
@@ -530,7 +646,7 @@ views, offering a peaceful and picturesque setting.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                Reputed Developer
+                  Reputed Developer
                 </p>
               </div>
             </div>
@@ -539,12 +655,12 @@ views, offering a peaceful and picturesque setting.
       </section>
 
       <section class="w-full p-6 md:p-12 bg-white">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <!-- Image Section -->
-
+        <div
+          class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center"
+        >
           <!-- Text and Features Section -->
           <div
-            class="flex flex-col gap-6 md:gap-8 justify-center px-4 md:px-10"
+            class="flex flex-col gap-6 md:gap-8 justify-center px-4 md:px-10 h-full"
           >
             <!-- Heading and Description -->
             <div class="bg-blue-100 p-6 md:p-10 rounded-lg text-center">
@@ -552,8 +668,8 @@ views, offering a peaceful and picturesque setting.
                 Emerging Real Estate Hotspot
               </h2>
               <p class="text-gray-700 text-base md:text-lg mt-3 md:mt-4">
-                Rapid development in the area boosts the value and
-                appeal of property investments.
+                Rapid development in the area boosts the value and appeal of
+                property investments.
               </p>
             </div>
 
@@ -566,7 +682,7 @@ views, offering a peaceful and picturesque setting.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                Potential for High ROI
+                  Potential for High ROI
                 </p>
               </div>
               <div
@@ -576,109 +692,138 @@ views, offering a peaceful and picturesque setting.
                 <p
                   class="text-gray-900 font-medium mt-2 md:mt-3 text-lg md:text-xl"
                 >
-                Tourism and Recreation
+                  Tourism and Recreation
                 </p>
               </div>
             </div>
           </div>
-          <div class="w-full">
+
+          <!-- Image Section -->
+          <div class="w-full flex-1">
             <img
-              src="./images/hero1.webp"
+              src="./image/hero4.jpg"
               alt="Placeholder Image"
-              class="w-full h-auto md:h-full object-cover rounded-lg"
+              class="w-full h-auto md:h-full object-contain rounded-lg"
             />
           </div>
         </div>
       </section>
 
-
       <!-- Gallery -->
 
       <section class="unique-gallery-section bg-white" id="gallery">
         <h1 class="benefits-title"><span class="gold2"></span></h1>
-        <div class="gallery-container">
-          <div class="gallery-scroll-container" id="galleryScroll">
-            <div class="gallery-item">
+
+        <!-- Gallery Container -->
+        <div class="gallery-container relative overflow-hidden">
+          <div
+            class="gallery-scroll-container flex gap-4 overflow-x-auto scroll-smooth"
+            id="galleryScroll"
+          >
+            <div class="gallery-item flex-shrink-0 w-full md:w-[300px]">
               <img
-                src="./images/hero1.webp"
+                src="./image/hero1.jpg"
                 alt="Aerial View of Residential Area"
+                class="w-full h-auto object-contain rounded-lg"
               />
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item flex-shrink-0 w-full md:w-[300px]">
               <img
-                src="./images/hero2.webp"
+                src="./image/hero2.jpg"
                 alt="Scenic View of Dam and Waterbody"
+                class="w-full h-auto object-contain rounded-lg"
               />
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item flex-shrink-0 w-full md:w-[300px]">
               <img
-                src="./images/hero3.webp"
+                src="./image/hero3.jpg"
                 alt="Scenic View of Dam and Waterbody"
+                class="w-full h-auto object-contain rounded-lg"
               />
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item flex-shrink-0 w-full md:w-[300px]">
               <img
-                src="./images/hero4.webp"
+                src="./image/hero4.jpg"
                 alt="Scenic View of Dam and Waterbody"
+                class="w-full h-auto object-contain rounded-lg"
               />
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item flex-shrink-0 w-full md:w-[300px]">
               <img
-                src="./images/hero5.webp"
+                src="./image/hero5.jpg"
                 alt="Scenic View of Dam and Waterbody"
+                class="w-full h-auto object-contain rounded-lg"
               />
             </div>
           </div>
 
           <!-- Scroll buttons -->
-          <div class="scroll-btn-left" id="scrollLeft">←</div>
-          <div class="scroll-btn-right" id="scrollRight">→</div>
+          <button
+            class="scroll-btn absolute left-2 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full shadow-lg"
+            id="scrollLeft"
+          >
+            ←
+          </button>
+          <button
+            class="scroll-btn absolute right-2 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full shadow-lg"
+            id="scrollRight"
+          >
+            →
+          </button>
         </div>
-
-        <!-- Download Brochure Button -->
-        <!-- <div class="download-brochure-btn-container">
-            <button class="btn2">Download Brochure</button>
-          </div> -->
       </section>
 
-      <section class="py-16 px-16 lg:px-24 bg-white">
+      <section class="py-16 px-16 lg:px-24 bg-white" id="location">
         <div class="mx-auto max-w-7xl text-center mb-12">
           <h2 class="text-4xl font-bold">Seamlessly Connected to Everything</h2>
           <p class="mt-4 text-lg">
-            Live at the heart of convenience with effortless access to key locations for education, travel, and leisure.
+            Live at the heart of convenience with effortless access to key
+            locations for education, travel, and leisure.
           </p>
         </div>
-      
+
         <!-- Grid Layout -->
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Educational Institutions -->
-          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
-            <h3 class="text-xl font-semibold text-[#705028] mb-3">Educational Institutions</h3>
+          <div
+            class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105"
+          >
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">
+              Educational Institutions
+            </h3>
             <ul class="list-disc list-inside">
               <li>KJ College of Engineering - 20 mins</li>
               <li>JSPM School and College - 30 mins</li>
             </ul>
           </div>
-      
+
           <!-- Transportation Hubs -->
-          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
-            <h3 class="text-xl font-semibold text-[#705028] mb-3">Transportation Hubs</h3>
+          <div
+            class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105"
+          >
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">
+              Transportation Hubs
+            </h3>
             <ul class="list-disc list-inside">
               <li>Khadi Machine Chowk - 20 mins</li>
               <li>Pune Railway Station - 60 mins</li>
               <li>Katraj Chowk - 30 mins</li>
             </ul>
           </div>
-      
+
           <!-- Religious & Landmark Locations -->
-          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
-            <h3 class="text-xl font-semibold text-[#705028] mb-3">Religious & Landmark Locations</h3>
+          <div
+            class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105"
+          >
+            <h3 class="text-xl font-semibold text-[#705028] mb-3">
+              Religious & Landmark Locations
+            </h3>
             <ul class="list-disc list-inside">
               <li>ISKCON Temple - 25 mins</li>
               <li>Proposed Purandar Airport - 30 mins</li>
             </ul>
           </div>
-      
+
           <!-- Hotels & Dining -->
           <!-- <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#C5964A] transform transition duration-300 hover:scale-105">
             <h3 class="text-xl font-semibold text-[#705028] mb-3">Hotels & Dining</h3>
@@ -689,7 +834,6 @@ views, offering a peaceful and picturesque setting.
           </div> -->
         </div>
       </section>
-      
     </main>
 
     <footer class="footer">
@@ -717,11 +861,7 @@ views, offering a peaceful and picturesque setting.
           </div>
           <div class="footer-item">
             <h3 class="footer-title">Scan QR Code</h3>
-            <img
-              src="image/qr.jpg"
-              alt="QR Code"
-              class="footer-qr-code"
-            />
+            <img src="image/qr.jpg" alt="QR Code" class="footer-qr-code" />
           </div>
           <div class="footer-item">
             <a href="https://maharera.mahaonline.gov.in" class="footer-link"
